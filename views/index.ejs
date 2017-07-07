@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <script src="/javascripts/index.js"></script>
+
+
+
+     <% for(var j=0; j <userList.length; j++){ %>
+        <span>用户名：</span>
+        <%=userList[j].userName%>
+       
+    <% } %>
+
+
+    <h2>用户列表</h2>
+    <ul>
+        <%
+            for(var i= 0,len = userList.length;i<len;i++) {
+                %>
+                姓名:<%=userList[i]['userName']%>
+                年龄:<%=userList[i]['age']%><br/>
+                <%
+            }
+        %>
+    </ul>
+    <h2>年龄大于30小于70的用户</h2>
+     <%
+            for(var i= 0,len = userList.length;i<len;i++) {
+                if(userList[i]['age'] >= 30 && userList[i]['age'] <=70) {
+                    %>
+                    姓名:<%=userList[i]['userName']%>
+                    年龄:<%=userList[i]['age']%><br/>
+                <%}
+            }
+        %>
+  </body>
+</html>
